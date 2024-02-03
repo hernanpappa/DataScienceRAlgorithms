@@ -27,4 +27,84 @@ mediana
 desvio
 ```
 
-# Continuara
+Exercice 4.
+
+-   Dentro de un grupo de amigos se registró que calzan los siguientes números en zapatos: {36, 36, 37, 35, 38, 40, 42, 44, 44, 45}
+
+    a.  Calcule el talle promedio
+    b.  Calcule la mediana
+    c.  Calcule el desvío estándar
+    d.  Asuma que no se puede ser feliz si se tiene que usar un talle de zapato que difiera en más de una unidad de lo que se calza. Asuma también que decidieron comprar todos el mismo talle y compartirlos. Calcule la proporción de amigos felices si se deciden por el promedio y si se deciden por la mediana
+    e.  Calcule las modas
+    f.  Vea, por tanteo, como elegir dos talles distintos que maximicen la felicidad del grupo de amigos.
+
+```{r}
+conjunto_talles <- c(36, 36, 37, 35, 38, 40, 42, 44, 44, 45)
+
+# Puntos a, b y c
+promedio <- mean(conjunto_talles)
+mediana <- median(conjunto_talles)
+desvio <- sd(conjunto_talles)
+
+cat("El promedio es: ", promedio)
+cat("La mediana es: ", mediana)
+cat("El desvio estandar es: ", desvio)
+
+```
+
+```{r}
+# Punto d
+esta_en_rango <- function(numero, rango_inferior, rango_superior) {
+  return(numero >= rango_inferior & numero <= rango_superior)
+}
+
+proporcion_amigos_felices <- function(conjunto, medida){
+  rango_inferior <- medida - 1
+  rango_superior <- medida + 1
+  amigos_felices <- c()
+  
+  for (i in 1:length(conjunto)) {
+    amigos_felices[i] <- esta_en_rango(conjunto[i], rango_inferior, rango_superior)
+  }
+  return(amigos_felices)
+}
+
+# Aqui solo 1 persona esta feliz
+proporcion_amigos_felices(conjunto_talles, promedio) 
+# Aqui solo 2 personas estan felices
+proporcion_amigos_felices(conjunto_talles, mediana) 
+```
+
+()
+
+```{r}
+# Puntos e y f
+tabla_frecuencias <- table(conjunto_talles)
+
+# Extraemos la primer moda que se encuentre, la mas chica si hay varias
+moda <- as.numeric(names(tabla_frecuencias)[which.max(tabla_frecuencias)])
+
+# Extraemos todas las modas que se encuentren
+modas <- as.numeric(names(tabla_frecuencias)[tabla_frecuencias == max(tabla_frecuencias)])
+
+print(paste("Las modas son:", toString(modas)))
+
+# Calculamos los dos mejores talles.
+mejores_talles <- function(conjunto){
+  
+  tabla_frecuencias <- table(conjunto)
+  talles_irrepetibles <- as.numeric(names(tabla_frecuencias))
+  longitud_conjunto <- length(talles_irrepetibles)
+  amigos_felices_por_talle <- matrix(NA, nrow=longitud_conjunto, ncol=2)
+  
+  for (i in 1:longitud_conjunto){
+    amigos_felices_por_talle[i, 1] = talles_irrepetibles[i] 
+    amigos_felices_por_talle[i, 2] = sum(proporcion_amigos_felices(conjunto, talles_irrepetibles[i]))
+  }
+  
+  colnames(amigos_felices_por_talle) <- c("Talle","AmigosFelicesPorTalle")
+  return(amigos_felices_por_talle)
+}
+
+mejores_talles(conjunto_talles)
+```

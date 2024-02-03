@@ -1792,12 +1792,140 @@ promedio</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<div id="continuara" class="section level1">
-<h1>Continuara</h1>
+<p>Exercice 4.</p>
+<ul>
+<li><p>Dentro de un grupo de amigos se registró que calzan los
+siguientes números en zapatos: {36, 36, 37, 35, 38, 40, 42, 44, 44,
+45}</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calcule el talle promedio</li>
+<li>Calcule la mediana</li>
+<li>Calcule el desvío estándar</li>
+<li>Asuma que no se puede ser feliz si se tiene que usar un talle de
+zapato que difiera en más de una unidad de lo que se calza. Asuma
+también que decidieron comprar todos el mismo talle y compartirlos.
+Calcule la proporción de amigos felices si se deciden por el promedio y
+si se deciden por la mediana</li>
+<li>Calcule las modas</li>
+<li>Vea, por tanteo, como elegir dos talles distintos que maximicen la
+felicidad del grupo de amigos.</li>
+</ol></li>
+</ul>
 <!-- rnb-text-end -->
-</div>
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uanVudG9fdGFsbGVzIDwtIGMoMzYsIDM2LCAzNywgMzUsIDM4LCA0MCwgNDIsIDQ0LCA0NCwgNDUpXG5cbiMgUHVudG9zIGEsIGIgeSBjXG5wcm9tZWRpbyA8LSBtZWFuKGNvbmp1bnRvX3RhbGxlcylcbm1lZGlhbmEgPC0gbWVkaWFuKGNvbmp1bnRvX3RhbGxlcylcbmRlc3ZpbyA8LSBzZChjb25qdW50b190YWxsZXMpXG5cbmNhdChcIkVsIHByb21lZGlvIGVzOiBcIiwgcHJvbWVkaW8pXG5gYGAifQ== -->
+<pre class="r"><code>conjunto_talles &lt;- c(36, 36, 37, 35, 38, 40, 42, 44, 44, 45)
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIG5vdGVib29rIHdhcyBtYWRlIGZvciBkbyBleGVyY2lzZXMgb2YgcHJvYmFiaWxpdHkgYW5kIHN0YXRpc3RpY3MuIFNwZWNpZmljIGV4ZXJjaWNlcyBvZiB0aGUgJ0ludHJvZHVjY2nDs24gYSBsYSBlc3RhZMOtc3RpY2EgLSBHdWlhIDEnIGZpbGUgb2YgbXkgZGF0YSBzY2llbmNlIGNvdXJzZS4NCg0KRXhlcmNpY2UgMw0KDQotICAgQ29uc2lkZXJlIGVsIHNpZ3VpZW50ZSBjb25qdW50bzogezEsMyw1LDcsOX0NCg0KICAgIGEuICBDYWxjdWxlIGVsIHByb21lZGlvDQoNCiAgICBiLiAgQ2FsY3VsZSBsYSBtZWRpYW5hDQoNCiAgICBjLiAgQ2FsY3VsZSBlbCBkZXN2w61vIGVzdMOhbmRhciBkZSBsYSBtdWVzdHJhDQoNCmBgYHtyfQ0KY29uanVudG8gPC0gYygxLCAzLCA1LCA3LCA5KQ0KDQpwcm9tZWRpbyA8LSBtZWFuKGNvbmp1bnRvKQ0KbWVkaWFuYSA8LSBtZWRpYW4oY29uanVudG8pDQpkZXN2aW8gPC0gc2QoY29uanVudG8pDQoNCnByb21lZGlvDQptZWRpYW5hDQpkZXN2aW8NCmBgYA0KDQojIENvbnRpbnVhcmENCg==</div>
+# Puntos a, b y c
+promedio &lt;- mean(conjunto_talles)
+mediana &lt;- median(conjunto_talles)
+desvio &lt;- sd(conjunto_talles)
+
+cat(&quot;El promedio es: &quot;, promedio)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRWwgcHJvbWVkaW8gZXM6ICAzOS43XG4ifQ== -->
+<pre><code>El promedio es:  39.7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiTGEgbWVkaWFuYSBlczogXCIsIG1lZGlhbmEpXG5gYGAifQ== -->
+<pre class="r"><code>cat(&quot;La mediana es: &quot;, mediana)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTGEgbWVkaWFuYSBlczogIDM5XG4ifQ== -->
+<pre><code>La mediana es:  39</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiRWwgZGVzdmlvIGVzdGFuZGFyIGVzOiBcIiwgZGVzdmlvKVxuYGBgIn0= -->
+<pre class="r"><code>cat(&quot;El desvio estandar es: &quot;, desvio)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRWwgZGVzdmlvIGVzdGFuZGFyIGVzOiAgMy44MDIwNDZcbiJ9 -->
+<pre><code>El desvio estandar es:  3.802046</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQdW50byBkXG5lc3RhX2VuX3JhbmdvIDwtIGZ1bmN0aW9uKG51bWVybywgcmFuZ29faW5mZXJpb3IsIHJhbmdvX3N1cGVyaW9yKSB7XG4gIHJldHVybihudW1lcm8gPj0gcmFuZ29faW5mZXJpb3IgJiBudW1lcm8gPD0gcmFuZ29fc3VwZXJpb3IpXG59XG5cbnByb3BvcmNpb25fYW1pZ29zX2ZlbGljZXMgPC0gZnVuY3Rpb24oY29uanVudG8sIG1lZGlkYSl7XG4gIHJhbmdvX2luZmVyaW9yIDwtIG1lZGlkYSAtIDFcbiAgcmFuZ29fc3VwZXJpb3IgPC0gbWVkaWRhICsgMVxuICBhbWlnb3NfZmVsaWNlcyA8LSBjKClcbiAgXG4gIGZvciAoaSBpbiAxOmxlbmd0aChjb25qdW50bykpIHtcbiAgICBhbWlnb3NfZmVsaWNlc1tpXSA8LSBlc3RhX2VuX3JhbmdvKGNvbmp1bnRvW2ldLCByYW5nb19pbmZlcmlvciwgcmFuZ29fc3VwZXJpb3IpXG4gIH1cbiAgcmV0dXJuKGFtaWdvc19mZWxpY2VzKVxufVxuXG4jIEFxdWkgc29sbyAxIHBlcnNvbmEgZXN0YSBmZWxpelxucHJvcG9yY2lvbl9hbWlnb3NfZmVsaWNlcyhjb25qdW50b190YWxsZXMsIHByb21lZGlvKSBcbmBgYCJ9 -->
+<pre class="r"><code># Punto d
+esta_en_rango &lt;- function(numero, rango_inferior, rango_superior) {
+  return(numero &gt;= rango_inferior &amp; numero &lt;= rango_superior)
+}
+
+proporcion_amigos_felices &lt;- function(conjunto, medida){
+  rango_inferior &lt;- medida - 1
+  rango_superior &lt;- medida + 1
+  amigos_felices &lt;- c()
+  
+  for (i in 1:length(conjunto)) {
+    amigos_felices[i] &lt;- esta_en_rango(conjunto[i], rango_inferior, rango_superior)
+  }
+  return(amigos_felices)
+}
+
+# Aqui solo 1 persona esta feliz
+proporcion_amigos_felices(conjunto_talles, promedio) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBcXVpIHNvbG8gMiBwZXJzb25hcyBlc3RhbiBmZWxpY2VzXG5wcm9wb3JjaW9uX2FtaWdvc19mZWxpY2VzKGNvbmp1bnRvX3RhbGxlcywgbWVkaWFuYSkgXG5gYGAifQ== -->
+<pre class="r"><code># Aqui solo 2 personas estan felices
+proporcion_amigos_felices(conjunto_talles, mediana) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>()</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQdW50b3MgZSB5IGZcbnRhYmxhX2ZyZWN1ZW5jaWFzIDwtIHRhYmxlKGNvbmp1bnRvX3RhbGxlcylcblxuIyBFeHRyYWVtb3MgbGEgcHJpbWVyIG1vZGEgcXVlIHNlIGVuY3VlbnRyZSwgbGEgbWFzIGNoaWNhIHNpIGhheSB2YXJpYXNcbm1vZGEgPC0gYXMubnVtZXJpYyhuYW1lcyh0YWJsYV9mcmVjdWVuY2lhcylbd2hpY2gubWF4KHRhYmxhX2ZyZWN1ZW5jaWFzKV0pXG5cbiMgRXh0cmFlbW9zIHRvZGFzIGxhcyBtb2RhcyBxdWUgc2UgZW5jdWVudHJlblxubW9kYXMgPC0gYXMubnVtZXJpYyhuYW1lcyh0YWJsYV9mcmVjdWVuY2lhcylbdGFibGFfZnJlY3VlbmNpYXMgPT0gbWF4KHRhYmxhX2ZyZWN1ZW5jaWFzKV0pXG5cbnByaW50KHBhc3RlKFwiTGFzIG1vZGFzIHNvbjpcIiwgdG9TdHJpbmcobW9kYXMpKSlcbmBgYCJ9 -->
+<pre class="r"><code># Puntos e y f
+tabla_frecuencias &lt;- table(conjunto_talles)
+
+# Extraemos la primer moda que se encuentre, la mas chica si hay varias
+moda &lt;- as.numeric(names(tabla_frecuencias)[which.max(tabla_frecuencias)])
+
+# Extraemos todas las modas que se encuentren
+modas &lt;- as.numeric(names(tabla_frecuencias)[tabla_frecuencias == max(tabla_frecuencias)])
+
+print(paste(&quot;Las modas son:&quot;, toString(modas)))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiTGFzIG1vZGFzIHNvbjogMzYsIDQ0XCJcbiJ9 -->
+<pre><code>[1] &quot;Las modas son: 36, 44&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDYWxjdWxhbW9zIGxvcyBkb3MgbWVqb3JlcyB0YWxsZXMuXG5tZWpvcmVzX3RhbGxlcyA8LSBmdW5jdGlvbihjb25qdW50byl7XG4gIFxuICB0YWJsYV9mcmVjdWVuY2lhcyA8LSB0YWJsZShjb25qdW50bylcbiAgdGFsbGVzX2lycmVwZXRpYmxlcyA8LSBhcy5udW1lcmljKG5hbWVzKHRhYmxhX2ZyZWN1ZW5jaWFzKSlcbiAgbG9uZ2l0dWRfY29uanVudG8gPC0gbGVuZ3RoKHRhbGxlc19pcnJlcGV0aWJsZXMpXG4gIGFtaWdvc19mZWxpY2VzX3Bvcl90YWxsZSA8LSBtYXRyaXgoTkEsIG5yb3c9bG9uZ2l0dWRfY29uanVudG8sIG5jb2w9MilcbiAgXG4gIGZvciAoaSBpbiAxOmxvbmdpdHVkX2Nvbmp1bnRvKXtcbiAgICBhbWlnb3NfZmVsaWNlc19wb3JfdGFsbGVbaSwgMV0gPSB0YWxsZXNfaXJyZXBldGlibGVzW2ldIFxuICAgIGFtaWdvc19mZWxpY2VzX3Bvcl90YWxsZVtpLCAyXSA9IHN1bShwcm9wb3JjaW9uX2FtaWdvc19mZWxpY2VzKGNvbmp1bnRvLCB0YWxsZXNfaXJyZXBldGlibGVzW2ldKSlcbiAgfVxuICBcbiAgY29sbmFtZXMoYW1pZ29zX2ZlbGljZXNfcG9yX3RhbGxlKSA8LSBjKFwiVGFsbGVcIixcIkFtaWdvc0ZlbGljZXNQb3JUYWxsZVwiKVxuICByZXR1cm4oYW1pZ29zX2ZlbGljZXNfcG9yX3RhbGxlKVxufVxuXG5tZWpvcmVzX3RhbGxlcyhjb25qdW50b190YWxsZXMpXG5gYGAifQ== -->
+<pre class="r"><code># Calculamos los dos mejores talles.
+mejores_talles &lt;- function(conjunto){
+  
+  tabla_frecuencias &lt;- table(conjunto)
+  talles_irrepetibles &lt;- as.numeric(names(tabla_frecuencias))
+  longitud_conjunto &lt;- length(talles_irrepetibles)
+  amigos_felices_por_talle &lt;- matrix(NA, nrow=longitud_conjunto, ncol=2)
+  
+  for (i in 1:longitud_conjunto){
+    amigos_felices_por_talle[i, 1] = talles_irrepetibles[i] 
+    amigos_felices_por_talle[i, 2] = sum(proporcion_amigos_felices(conjunto, talles_irrepetibles[i]))
+  }
+  
+  colnames(amigos_felices_por_talle) &lt;- c(&quot;Talle&quot;,&quot;AmigosFelicesPorTalle&quot;)
+  return(amigos_felices_por_talle)
+}
+
+mejores_talles(conjunto_talles)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBUYWxsZSBBbWlnb3NGZWxpY2VzUG9yVGFsbGVcblsxLF0gICAgMzUgICAgICAgICAgICAgICAgICAgICAzXG5bMixdICAgIDM2ICAgICAgICAgICAgICAgICAgICAgNFxuWzMsXSAgICAzNyAgICAgICAgICAgICAgICAgICAgIDRcbls0LF0gICAgMzggICAgICAgICAgICAgICAgICAgICAyXG5bNSxdICAgIDQwICAgICAgICAgICAgICAgICAgICAgMVxuWzYsXSAgICA0MiAgICAgICAgICAgICAgICAgICAgIDFcbls3LF0gICAgNDQgICAgICAgICAgICAgICAgICAgICAzXG5bOCxdICAgIDQ1ICAgICAgICAgICAgICAgICAgICAgM1xuIn0= -->
+<pre><code>     Talle AmigosFelicesPorTalle
+[1,]    35                     3
+[2,]    36                     4
+[3,]    37                     4
+[4,]    38                     2
+[5,]    40                     1
+[6,]    42                     1
+[7,]    44                     3
+[8,]    45                     3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIG5vdGVib29rIHdhcyBtYWRlIGZvciBkbyBleGVyY2lzZXMgb2YgcHJvYmFiaWxpdHkgYW5kIHN0YXRpc3RpY3MuIFNwZWNpZmljIGV4ZXJjaWNlcyBvZiB0aGUgJ0ludHJvZHVjY2nDs24gYSBsYSBlc3RhZMOtc3RpY2EgLSBHdWlhIDEnIGZpbGUgb2YgbXkgZGF0YSBzY2llbmNlIGNvdXJzZS4NCg0KRXhlcmNpY2UgMw0KDQotICAgQ29uc2lkZXJlIGVsIHNpZ3VpZW50ZSBjb25qdW50bzogezEsMyw1LDcsOX0NCg0KICAgIGEuICBDYWxjdWxlIGVsIHByb21lZGlvDQoNCiAgICBiLiAgQ2FsY3VsZSBsYSBtZWRpYW5hDQoNCiAgICBjLiAgQ2FsY3VsZSBlbCBkZXN2w61vIGVzdMOhbmRhciBkZSBsYSBtdWVzdHJhDQoNCmBgYHtyfQ0KY29uanVudG8gPC0gYygxLCAzLCA1LCA3LCA5KQ0KDQpwcm9tZWRpbyA8LSBtZWFuKGNvbmp1bnRvKQ0KbWVkaWFuYSA8LSBtZWRpYW4oY29uanVudG8pDQpkZXN2aW8gPC0gc2QoY29uanVudG8pDQoNCnByb21lZGlvDQptZWRpYW5hDQpkZXN2aW8NCmBgYA0KDQpFeGVyY2ljZSA0Lg0KDQotICAgRGVudHJvIGRlIHVuIGdydXBvIGRlIGFtaWdvcyBzZSByZWdpc3Ryw7MgcXVlIGNhbHphbiBsb3Mgc2lndWllbnRlcyBuw7ptZXJvcyBlbiB6YXBhdG9zOiB7MzYsIDM2LCAzNywgMzUsIDM4LCA0MCwgNDIsIDQ0LCA0NCwgNDV9DQoNCiAgICBhLiAgQ2FsY3VsZSBlbCB0YWxsZSBwcm9tZWRpbw0KICAgIGIuICBDYWxjdWxlIGxhIG1lZGlhbmENCiAgICBjLiAgQ2FsY3VsZSBlbCBkZXN2w61vIGVzdMOhbmRhcg0KICAgIGQuICBBc3VtYSBxdWUgbm8gc2UgcHVlZGUgc2VyIGZlbGl6IHNpIHNlIHRpZW5lIHF1ZSB1c2FyIHVuIHRhbGxlIGRlIHphcGF0byBxdWUgZGlmaWVyYSBlbiBtw6FzIGRlIHVuYSB1bmlkYWQgZGUgbG8gcXVlIHNlIGNhbHphLiBBc3VtYSB0YW1iacOpbiBxdWUgZGVjaWRpZXJvbiBjb21wcmFyIHRvZG9zIGVsIG1pc21vIHRhbGxlIHkgY29tcGFydGlybG9zLiBDYWxjdWxlIGxhIHByb3BvcmNpw7NuIGRlIGFtaWdvcyBmZWxpY2VzIHNpIHNlIGRlY2lkZW4gcG9yIGVsIHByb21lZGlvIHkgc2kgc2UgZGVjaWRlbiBwb3IgbGEgbWVkaWFuYQ0KICAgIGUuICBDYWxjdWxlIGxhcyBtb2Rhcw0KICAgIGYuICBWZWEsIHBvciB0YW50ZW8sIGNvbW8gZWxlZ2lyIGRvcyB0YWxsZXMgZGlzdGludG9zIHF1ZSBtYXhpbWljZW4gbGEgZmVsaWNpZGFkIGRlbCBncnVwbyBkZSBhbWlnb3MuDQoNCmBgYHtyfQ0KY29uanVudG9fdGFsbGVzIDwtIGMoMzYsIDM2LCAzNywgMzUsIDM4LCA0MCwgNDIsIDQ0LCA0NCwgNDUpDQoNCiMgUHVudG9zIGEsIGIgeSBjDQpwcm9tZWRpbyA8LSBtZWFuKGNvbmp1bnRvX3RhbGxlcykNCm1lZGlhbmEgPC0gbWVkaWFuKGNvbmp1bnRvX3RhbGxlcykNCmRlc3ZpbyA8LSBzZChjb25qdW50b190YWxsZXMpDQoNCmNhdCgiRWwgcHJvbWVkaW8gZXM6ICIsIHByb21lZGlvKQ0KY2F0KCJMYSBtZWRpYW5hIGVzOiAiLCBtZWRpYW5hKQ0KY2F0KCJFbCBkZXN2aW8gZXN0YW5kYXIgZXM6ICIsIGRlc3ZpbykNCg0KYGBgDQoNCmBgYHtyfQ0KIyBQdW50byBkDQplc3RhX2VuX3JhbmdvIDwtIGZ1bmN0aW9uKG51bWVybywgcmFuZ29faW5mZXJpb3IsIHJhbmdvX3N1cGVyaW9yKSB7DQogIHJldHVybihudW1lcm8gPj0gcmFuZ29faW5mZXJpb3IgJiBudW1lcm8gPD0gcmFuZ29fc3VwZXJpb3IpDQp9DQoNCnByb3BvcmNpb25fYW1pZ29zX2ZlbGljZXMgPC0gZnVuY3Rpb24oY29uanVudG8sIG1lZGlkYSl7DQogIHJhbmdvX2luZmVyaW9yIDwtIG1lZGlkYSAtIDENCiAgcmFuZ29fc3VwZXJpb3IgPC0gbWVkaWRhICsgMQ0KICBhbWlnb3NfZmVsaWNlcyA8LSBjKCkNCiAgDQogIGZvciAoaSBpbiAxOmxlbmd0aChjb25qdW50bykpIHsNCiAgICBhbWlnb3NfZmVsaWNlc1tpXSA8LSBlc3RhX2VuX3JhbmdvKGNvbmp1bnRvW2ldLCByYW5nb19pbmZlcmlvciwgcmFuZ29fc3VwZXJpb3IpDQogIH0NCiAgcmV0dXJuKGFtaWdvc19mZWxpY2VzKQ0KfQ0KDQojIEFxdWkgc29sbyAxIHBlcnNvbmEgZXN0YSBmZWxpeg0KcHJvcG9yY2lvbl9hbWlnb3NfZmVsaWNlcyhjb25qdW50b190YWxsZXMsIHByb21lZGlvKSANCiMgQXF1aSBzb2xvIDIgcGVyc29uYXMgZXN0YW4gZmVsaWNlcw0KcHJvcG9yY2lvbl9hbWlnb3NfZmVsaWNlcyhjb25qdW50b190YWxsZXMsIG1lZGlhbmEpIA0KYGBgDQoNCigpDQoNCmBgYHtyfQ0KIyBQdW50b3MgZSB5IGYNCnRhYmxhX2ZyZWN1ZW5jaWFzIDwtIHRhYmxlKGNvbmp1bnRvX3RhbGxlcykNCg0KIyBFeHRyYWVtb3MgbGEgcHJpbWVyIG1vZGEgcXVlIHNlIGVuY3VlbnRyZSwgbGEgbWFzIGNoaWNhIHNpIGhheSB2YXJpYXMNCm1vZGEgPC0gYXMubnVtZXJpYyhuYW1lcyh0YWJsYV9mcmVjdWVuY2lhcylbd2hpY2gubWF4KHRhYmxhX2ZyZWN1ZW5jaWFzKV0pDQoNCiMgRXh0cmFlbW9zIHRvZGFzIGxhcyBtb2RhcyBxdWUgc2UgZW5jdWVudHJlbg0KbW9kYXMgPC0gYXMubnVtZXJpYyhuYW1lcyh0YWJsYV9mcmVjdWVuY2lhcylbdGFibGFfZnJlY3VlbmNpYXMgPT0gbWF4KHRhYmxhX2ZyZWN1ZW5jaWFzKV0pDQoNCnByaW50KHBhc3RlKCJMYXMgbW9kYXMgc29uOiIsIHRvU3RyaW5nKG1vZGFzKSkpDQoNCiMgQ2FsY3VsYW1vcyBsb3MgZG9zIG1lam9yZXMgdGFsbGVzLg0KbWVqb3Jlc190YWxsZXMgPC0gZnVuY3Rpb24oY29uanVudG8pew0KICANCiAgdGFibGFfZnJlY3VlbmNpYXMgPC0gdGFibGUoY29uanVudG8pDQogIHRhbGxlc19pcnJlcGV0aWJsZXMgPC0gYXMubnVtZXJpYyhuYW1lcyh0YWJsYV9mcmVjdWVuY2lhcykpDQogIGxvbmdpdHVkX2Nvbmp1bnRvIDwtIGxlbmd0aCh0YWxsZXNfaXJyZXBldGlibGVzKQ0KICBhbWlnb3NfZmVsaWNlc19wb3JfdGFsbGUgPC0gbWF0cml4KE5BLCBucm93PWxvbmdpdHVkX2Nvbmp1bnRvLCBuY29sPTIpDQogIA0KICBmb3IgKGkgaW4gMTpsb25naXR1ZF9jb25qdW50byl7DQogICAgYW1pZ29zX2ZlbGljZXNfcG9yX3RhbGxlW2ksIDFdID0gdGFsbGVzX2lycmVwZXRpYmxlc1tpXSANCiAgICBhbWlnb3NfZmVsaWNlc19wb3JfdGFsbGVbaSwgMl0gPSBzdW0ocHJvcG9yY2lvbl9hbWlnb3NfZmVsaWNlcyhjb25qdW50bywgdGFsbGVzX2lycmVwZXRpYmxlc1tpXSkpDQogIH0NCiAgDQogIGNvbG5hbWVzKGFtaWdvc19mZWxpY2VzX3Bvcl90YWxsZSkgPC0gYygiVGFsbGUiLCJBbWlnb3NGZWxpY2VzUG9yVGFsbGUiKQ0KICByZXR1cm4oYW1pZ29zX2ZlbGljZXNfcG9yX3RhbGxlKQ0KfQ0KDQptZWpvcmVzX3RhbGxlcyhjb25qdW50b190YWxsZXMpDQpgYGANCg==</div>
 
 
 
