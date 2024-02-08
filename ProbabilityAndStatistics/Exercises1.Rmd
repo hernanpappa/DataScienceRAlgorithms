@@ -151,7 +151,7 @@ marcar_medidas()
 
 ylab = "Frecuencias de uso"
 xlab = "Talles"
-main = "Histograma con modas marcadas con right = TRUE"
+main = "Histograma con valores optimos marcados con right = TRUE"
 color_feliz = "#18E239"
 color_infeliz = "#E21818"
 bins = c(35:46)
@@ -176,7 +176,7 @@ hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram
 marcar_medidas()
 
 
-main = "Histograma con modas marcadas con right = False"
+main = "Histograma con valores optimos marcados con right = False"
 hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram, breaks = breaks, right = FALSE,ylim = ylim)
 marcar_medidas()
 ```
