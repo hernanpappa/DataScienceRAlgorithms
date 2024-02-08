@@ -62,7 +62,7 @@ proporcion_amigos_felices <- function(conjunto, medida){
   rango_inferior <- medida - 1
   rango_superior <- medida + 1
   amigos_felices <- c()
-  
+  sapply
   for (i in 1:length(conjunto)) {
     amigos_felices[i] <- esta_en_rango(conjunto[i], rango_inferior, rango_superior)
   }
@@ -74,8 +74,6 @@ proporcion_amigos_felices(conjunto_talles, promedio)
 # Aqui solo 2 personas estan felices
 proporcion_amigos_felices(conjunto_talles, mediana) 
 ```
-
-()
 
 ```{r}
 # Puntos e y f
@@ -107,4 +105,78 @@ mejores_talles <- function(conjunto){
 }
 
 mejores_talles(conjunto_talles)
+```
+
+Exercice 5:
+
+-   Dibuje el histograma del universo de talles de zapatos mencionado en el ejercicio 4.
+
+    a.  Marque las modas en el histograma.
+    b.  Marque las soluciones calculadas para el punto 4.f
+    c.  Marque los límites de la felicidad (+ o – 1) talle desde las soluciones calculadas para el punto 4.f
+    d.  Pinte de colores distintos a la zona de los amigos felices e infelices
+
+```{r}
+# Punto general y punto A
+
+ylab = "Frecuencias de uso"
+xlab = "Talles"
+main = "Histograma con modas marcadas con right = TRUE"
+col_histogram = "#94E6FC"
+col_modas = "#FF9300"
+breaks = 35:46
+ylim = c(0, 3)
+
+marcar_medidas <- function() {
+  abline(v = modas, col = col_modas, lwd=5, lty = 3) # Punro a
+  # Leyenda
+  legend(x = "topright", # Posición de la leyenda
+       legend = "Modas", # Texto de la leyenda
+       col = col_modas, # Color de las líneas
+       lty = 3, # Tipo de línea
+       lwd = 3) # Grosor de línea
+}
+
+hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram, breaks = breaks, right = TRUE,ylim = ylim)
+marcar_medidas()
+
+
+main = "Histograma con modas marcadas con right = False"
+hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram, breaks = breaks, right = FALSE,ylim = ylim)
+marcar_medidas()
+```
+
+```{r}
+# Puntos b, c y d
+
+ylab = "Frecuencias de uso"
+xlab = "Talles"
+main = "Histograma con modas marcadas con right = TRUE"
+color_feliz = "#18E239"
+color_infeliz = "#E21818"
+bins = c(35:46)
+col_histogram = ifelse(bins >= 35 & bins <= 38, color_feliz, color_infeliz)
+col_max_felicidad = "#0084FF"
+col_desviacion = "#004687"
+breaks = 35:46
+ylim = c(0, 3)
+
+marcar_medidas <- function() {
+  abline(v = c(36,37), col = col_max_felicidad, lwd=5, lty=1) # Punto b
+  abline(v = c(35, 36, 37, 38), col = col_desviacion, lwd = 5, lty= 3) # Punto c
+  # Leyenda
+  legend(x = "topright", # Posición de la leyenda
+       legend = c("Valores optimos para la felicidad", "(+ o - 1) valor optimo mas cecano"), # Texto de la leyenda
+       col = c(col_max_felicidad, col_desviacion), # Color de las líneas
+       lty = c(1, 3), # Tipo de línea
+       lwd = 3) # Grosor de línea
+}
+
+hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram, breaks = breaks, right = TRUE,ylim = ylim)
+marcar_medidas()
+
+
+main = "Histograma con modas marcadas con right = False"
+hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram, breaks = breaks, right = FALSE,ylim = ylim)
+marcar_medidas()
 ```
