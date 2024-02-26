@@ -180,3 +180,39 @@ main = "Histograma con valores optimos marcados con right = False"
 hist(conjunto_talles, ylab = ylab, xlab = xlab, main = main, col = col_histogram, breaks = breaks, right = FALSE,ylim = ylim)
 marcar_medidas()
 ```
+
+Excercice 6:
+
+-   Se conoce la siguiente muestra aleatoria de un universo de las alturas de los habitantes de Argentina (180, 175, 176, 174, 170, 165, 181, 155, 167, 172, 193, 159), se pide:
+
+    a.  Calcular el promedio de la muestra
+    b.  Estimar el promedio del universo
+    c.  Calcular el desvío estándar de la muestra
+    d.  Estimar el desvío estándar del universo
+
+```{r}
+#6.a
+alturas_argentinos <- c(180, 175, 176, 174, 170, 165, 181, 155, 167, 172, 193, 159)
+promedio_altura <- mean(alturas_argentinos)
+promedio_altura 
+
+# Usa la función t.test() para calcular el intervalo de confianza del 95%
+resultado <- t.test(alturas_argentinos)
+
+# Imprime el intervalo de confianza
+print(resultado$conf.int)
+
+#6.b
+# Desvio estandar sobre la raiz cuadrada del numero de observaciones de nuestra muestra nos da el error estandar
+desvio_estandar <- sd(alturas_argentinos)
+n <- length(alturas_argentinos)
+error_estandar <- desvio_estandar / sqrt(n)
+error_estandar
+
+# Calcula el intervalo de confianza del 95% asumiendo que la distribucion de nuestros datos es normal
+intervalo_confianza <- c(promedio_altura - 1.95*error_estandar, promedio_altura + 1.95*error_estandar)
+
+# Añade el intervalo de confianza al promedio de la muestra para obtener el rango de estimación
+rango_estimacion <- promedio_altura + intervalo_confianza
+rango_estimacion
+```
