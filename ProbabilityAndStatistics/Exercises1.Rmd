@@ -225,7 +225,7 @@ Prueba de la funcion t.test() para hacer el 6.b mas rapido y con menos codigo
 
 ```{r}
 # Usa la función t.test() para calcular el intervalo de confianza del 95%
-resultado_t_test <- t.test(alturas_argentinos)
+resultado <- t.test(alturas_argentinos, conf.level = 0.95)
 
 # Imprime el intervalo de confianza
 print(resultado$conf.int)
@@ -235,7 +235,18 @@ Puntos 6.c y 6.d
 
 ```{r}
 # Punto 6.c
-desvio_estandar # Ya hecho en el punto 6.b
+desvio_estandar <- sd(alturas_argentinos) #hecho anteriormente
+desvio_estandar
 
-# Punto 6.d
+# Punto 6.d, utilizaremos la distribucion chi cuadrado porque la distribución de las varianzas muestrales sigue una distribución chi-cuadrado
+n <- length(alturas_argentinos)
+grados_libertad <- n - 1
+
+# Calculamos los limites del intervalo de confianza del 95% para la desviacion estandar de la poblacion
+
+limite_inferior <- sqrt(grados_libertad * desvio_estandar^2 / qchisq(0.975, df = grados_libertad))
+
+limite_superior <- sqrt(grados_libertad * desvio_estandar^2 / qchisq(0.025, df = grados_libertad))
+
+print(paste("El intervalo de confianza del 95% para la desviación estándar del universo está entre", round(limite_inferior, 2), "y", round(limite_superior, 2)))
 ```
